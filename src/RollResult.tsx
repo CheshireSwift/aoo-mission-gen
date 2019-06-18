@@ -22,16 +22,31 @@ export const RollResult = ({
           background: 'grey',
         })}
       >
-        <div className={css({ background: 'white' })}>
+        <div
+          className={css({
+            background: 'white',
+            button: { height: '2rem', verticalAlign: 'middle' },
+          })}
+        >
           <button
-            className={css({ width: '6rem', marginRight: '0.5rem' })}
+            className={css({ width: '6rem' })}
             onClick={() => {
               setResult(roll.roll(die).result)
             }}
           >
             {result ? 'Re-roll' : 'Roll'} ({die})
           </button>
-          {title}: {result || '??'}
+          <button
+            onClick={() => {
+              const newResult = parseInt(prompt('Roll result?'))
+              newResult && setResult(newResult)
+            }}
+          >
+            🔢
+          </button>
+          <span className={css({ marginLeft: '0.5rem' })}>
+            {title}: {result || '??'}
+          </span>
         </div>
         {result && (
           <div
