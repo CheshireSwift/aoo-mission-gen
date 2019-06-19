@@ -1,7 +1,7 @@
 import * as React from 'react'
 import TableResult from '../TableResult'
 import ChildTables from './helpers/ChildTables'
-import Factors from './Factors'
+import Factor from './Factor'
 import Purpose from './Purpose'
 
 export const NewAgency = () => (
@@ -81,12 +81,12 @@ export const NewAgency = () => (
       </TableResult>
     </ChildTables>
     <ChildTables>
-      <Factors title="Alien" />
-      <Factors title="Conspiracy" />
-      <Factors title="Horror" />
-      <Factors title="Occult" />
-      <Factors title="Technology" />
-      <Factors title="Influence" />
+      <Factor title="Alien" />
+      <Factor title="Conspiracy" />
+      <Factor title="Horror" />
+      <Factor title="Occult" />
+      <Factor title="Technology" />
+      <Factor title="Influence" />
     </ChildTables>
     <Purpose />
   </>
