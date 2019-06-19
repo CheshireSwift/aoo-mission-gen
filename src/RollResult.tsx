@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Roll from 'roll'
 import { css } from 'emotion'
+import * as _ from 'lodash'
 
 const roll = new Roll()
 
@@ -18,8 +19,7 @@ export const RollResult = ({
     <>
       <div
         className={css({
-          width: '100%',
-          background: 'grey',
+          background: 'lightgrey',
         })}
       >
         <div
@@ -34,7 +34,7 @@ export const RollResult = ({
               setResult(roll.roll(die).result)
             }}
           >
-            {result ? 'Re-roll' : 'Roll'} ({die})
+            {result ? 'Re-roll' : 'Roll'}
           </button>
           <button
             onClick={() => {
@@ -44,8 +44,8 @@ export const RollResult = ({
           >
             🔢
           </button>
-          <span className={css({ marginLeft: '0.5rem' })}>
-            {title}: {result || '??'}
+          <span className={css({ marginLeft: '0.5rem', color: 'grey' })}>
+            {title}: {result || '??'} ({die})
           </span>
         </div>
         {result && (
@@ -53,6 +53,7 @@ export const RollResult = ({
             className={css({
               background: 'white',
               marginLeft: '1rem',
+              marginBottom: '0.5rem',
             })}
           >
             {children(result)}
