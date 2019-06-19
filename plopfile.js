@@ -47,4 +47,22 @@ module.exports = plop => {
       },
     ],
   })
+
+  plop.setGenerator('mission', {
+    description: 'Mission type component',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'Mission name',
+      },
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: 'src/generators/missions/{{properCase name}}.tsx',
+        templateFile: 'templates/missiontype.tsx.hbs',
+      },
+    ],
+  })
 }

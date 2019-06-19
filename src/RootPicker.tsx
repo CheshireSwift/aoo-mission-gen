@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Agency from './generators/Agency'
 import Ally from './generators/Ally'
-import Assassination from './generators/Assassination'
+import Assassination from './generators/missions/Assassination'
 import Complication from './generators/Complication'
 import Enemy from './generators/Enemy'
 import ExistingAgency from './generators/ExistingAgency'
