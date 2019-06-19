@@ -1,6 +1,6 @@
 import * as React from 'react'
 import RollResult from './RollResult'
-import TableLookup from './TableLookup'
+import TableLookup, { ResultChildren } from './TableLookup'
 
 export const TableResult = ({
   title,
@@ -9,7 +9,7 @@ export const TableResult = ({
 }: {
   title: string
   die: string
-  children: Record<number, React.ReactNode>
+  children: ResultChildren
 }) => (
   <RollResult title={title} die={die}>
     {result => <TableLookup value={result}>{children}</TableLookup>}
