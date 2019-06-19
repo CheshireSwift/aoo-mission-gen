@@ -28,7 +28,7 @@ export const RollResult = ({
           })}
         >
           <button
-            className={css({ width: '6rem' })}
+            className={css({ width: '4rem' })}
             onClick={() => {
               setResult(roll.roll(die).result)
             }}

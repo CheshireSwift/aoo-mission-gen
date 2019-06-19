@@ -1,7 +1,6 @@
-import * as React from 'react'
-import Assassination from './generators/Assassination'
-import TableResult from './TableResult'
 import { css } from 'emotion'
+import * as React from 'react'
+import RootPicker from './RootPicker'
 
 export const App = () => (
   <div
@@ -9,18 +8,12 @@ export const App = () => (
       button: { border: 'none', '&:hover': { background: 'skyblue' } },
     })}
   >
-    <TableResult title="Mission Type" die="d8">
-      {{
-        1: <Assassination />,
-        2: 'Infiltration',
-        3: 'Investigation',
-        4: 'Paramilitary Strike',
-        5: 'Protection',
-        6: 'Search and Rescue',
-        7: 'Snatch and Grab',
-        8: 'Transportation',
-      }}
-    </TableResult>
+    <RootPicker
+      component={
+        new URLSearchParams(window.location.search).get('generator') ||
+        'MissionType'
+      }
+    />
   </div>
 )
 export default App
