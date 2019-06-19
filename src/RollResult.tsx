@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Roll from 'roll'
 import { css } from 'emotion'
+import { Cascade } from './context'
 
 const roll = new Roll()
 
@@ -13,7 +14,11 @@ export const RollResult = ({
   title: string
   die: string
 }) => {
-  const [result, setResult] = React.useState<number>()
+  const cascade = React.useContext(Cascade)
+  const [result, setResult] = React.useState<number>(
+    cascade ? roll.roll(die).result : null,
+  )
+
   return (
     <>
       <div
