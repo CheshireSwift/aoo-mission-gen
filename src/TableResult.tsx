@@ -7,12 +7,16 @@ export const TableResult = ({
   die,
   children,
 }: {
-  title: string
+  title?: string
   die: string
   children: ResultChildren
 }) => (
   <RollResult title={title} die={die}>
-    {result => <TableLookup value={result}>{children}</TableLookup>}
+    {result => (
+      <TableLookup title={title} value={result}>
+        {children}
+      </TableLookup>
+    )}
   </RollResult>
 )
 export default TableResult

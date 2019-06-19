@@ -3,7 +3,7 @@ import TableResult from '../TableResult'
 import ChildTables from './helpers/ChildTables'
 
 export const PlotType = () => (
-  <TableResult title="PlotType" die="d20">
+  <TableResult title="Plot Type" die="d20">
     {{
       1: 'Adventure',
       2: 'Ascension',

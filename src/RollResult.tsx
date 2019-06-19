@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Roll from 'roll'
 import { css } from 'emotion'
-import * as _ from 'lodash'
 
 const roll = new Roll()
 
@@ -45,7 +44,8 @@ export const RollResult = ({
             🔢
           </button>
           <span className={css({ marginLeft: '0.5rem', color: 'grey' })}>
-            {title}: {result || '??'} ({die})
+            {title && title + ': '}
+            {result || '??'} ({die})
           </span>
         </div>
         {result && (

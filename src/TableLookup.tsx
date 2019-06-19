@@ -8,16 +8,20 @@ export type ResultChildren =
   | ResultRecord
 
 export const TableLookup: React.FunctionComponent<{
+  title: string
   children: ResultChildren
   value: number
-}> = ({ children, value }) => {
+}> = ({ title, children, value }) => {
   const selected =
     typeof children === 'function'
       ? children(value)
       : (children as ResultRecord)[value]
 
   return typeof selected === 'string' ? (
-    <div className={css({ padding: '0.25rem' })}>{selected}</div>
+    <div className={css({ padding: '0.25rem' })}>
+      {title && title + ': '}
+      {selected}
+    </div>
   ) : (
     <>{selected}</>
   )

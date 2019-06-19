@@ -1,5 +1,6 @@
 import * as React from 'react'
 import TableResult from '../TableResult'
+import Ally from './Ally'
 
 export const Target = () => (
   <TableResult title="Target" die="d8">
@@ -10,7 +11,7 @@ export const Target = () => (
       4: 'Scientist',
       5: 'Military figure',
       6: 'Corporate leader',
-      7: 'Corrupted ally (roll on Ally table)',
+      7: <Ally corrupted="Corrupted " />,
       8: 'Creature',
     }}
   </TableResult>
