@@ -1,6 +1,7 @@
 import * as React from 'react'
 import TableResult from '../TableResult'
 import spreadResult from './helpers/spreadResult'
+import TaintedHuman from './TaintedHuman'
 
 export const Ally: React.FunctionComponent<{
   title?: string
@@ -43,16 +44,20 @@ export const Ally: React.FunctionComponent<{
           title={(young ? '' : 'Young ') + (title || 'Ally')}
           young={true}
           corrupted={corrupted}
-        />,
+        />
       ],
       [
         99,
-        <Ally
-          title={title}
-          corrupted={corrupted ? 'Tainted ' : 'Corrupted '}
-          young={young}
-        />,
-      ],
+        <>
+          <Ally
+            title={title}
+            corrupted={corrupted ? 'Tainted ' : 'Corrupted '}
+            young={young}
+          />
+          {// Add the statblock if this is the roll that took us from corrupted to tainted.
+          corrupted === 'Corrupted ' ? <TaintedHuman /> : null}
+        </>
+      ]
     ])}
   </TableResult>
 )

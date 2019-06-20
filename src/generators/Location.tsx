@@ -1,5 +1,6 @@
 import * as React from 'react'
 import TableResult from '../TableResult'
+import Agency from './Agency'
 import ChildTables from './helpers/ChildTables'
 import Proximity from './Proximity'
 
@@ -8,7 +9,7 @@ export const Location = () => (
     <Proximity />
     <TableResult title="Location" die="d10">
       {{
-        1: 'Agency/Organization Headquarters',
+        1: <Agency title="Agency HQ" />,
         2: 'Castle/Mansion/Apartment',
         3: 'Temple/Church/Mosque',
         4: 'Urban Center',
@@ -17,7 +18,7 @@ export const Location = () => (
         7: 'Important Building/Landmark',
         8: 'Yacht/Airplane/Train',
         9: 'Library/Research center',
-        10: 'Corporate Office',
+        10: 'Corporate Office'
       }}
     </TableResult>
   </ChildTables>
